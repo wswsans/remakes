@@ -20,5 +20,5 @@
 | オリジナルタグ | 説明 |
 | - | - |
 | \<input type="hidden" id="title" value="タイトル"> | タブの名前に使われる<br>未入力の場合はファイルの名前が使われる |
-| \<div id="keyGroup"><br>  \<span key="文字">説明</span><br>\</div> | key="文字" にダイアログに表示させたい文字を入れる(1文字, ctrlなど非対応)<br>説明はダイアログに表示させたい説明 |
+| \<div id="keyGroup"><br>  \<span key="文字" shiftKey>説明</span><br>\</div> | key="文字" にダイアログに表示させたい文字を入れる(1文字のみ)<br>説明はダイアログに表示させたい説明 |
 | \<div id="keyShort"><br>  \<span code="KeyA">JavaScript</span><br>\</div> | code: event.code<br>\<span>の中にJavaScriptのコードを入れる |
