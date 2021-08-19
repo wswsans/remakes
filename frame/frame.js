@@ -38,7 +38,14 @@ $(() => {
 		if ($("div#keyGroup").children().length > 0) $("div#dialog table").append(`<tr><th>${($("input#title").val()) ? $("input#title").val() : gets.link}</th></tr>`);
 		$.each($("div#keyGroup").children(), (ind, val) => $("div#dialog table").append(`<tr><th>${ $(val).attr("key") }</th><td>${ $(val).text() }</td></tr>`) );
 		$("div#keyGroup").html("");
-		$.each($("div#keyShort").children(), (ind, val) => keyShort_code[$(val).attr("code")] = $(val).text() );
+		let tmp = ""
+		$.each($("div#keyShort").children(), (ind, val) => {
+			tmp = (($(val).attr("shiftKey") != undefined) ? "shift_" : "") +
+					(($(val).attr("ctrlKey") != undefined) ? "ctrl_" : "") +
+					(($(val).attr("altKey") != undefined) ? "alt_" : "") +
+					(($(val).attr("metaKey") != undefined) ? "meta_" : "");
+			keyShort_code[tmp+$(val).attr("code")] = $(val).text()
+		});
 		$("div#keyShort").html("");
 	})
 	.fail(data => {
@@ -73,6 +80,13 @@ $(() => {
 				$("div#shadow").stop().fadeOut(100); $("div#dialog").stop().fadeOut(100);
 				break;
 		}
-		if (Object.keys(keyShort_code).indexOf(event.code) != -1) eval(keyShort_code[event.code]);
+		tmp = ((event.shiftKey) ? "shift_" : "") +
+				((event.ctrlKey) ? "ctrl_" : "") +
+				((event.altKey) ? "alt_" : "") +
+				((event.metaKey) ? "meta_" : "") +
+				event.code;
+		if (Object.keys(keyShort_code).indexOf(tmp) != -1) {
+			eval(keyShort_code[tmp]);
+		}
 	})
 })
