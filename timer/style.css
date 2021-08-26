@@ -1,0 +1,67 @@
+/* 全体 */
+* {
+	font-size: 10px;
+}
+/* 消す */
+*:focus {
+	outline: none;
+}
+button, label, br, img {
+  -webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	 -khtml-user-select: none; /* Konqueror HTML */
+	   -moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none; /* Non-prefixed version, currently
+								  supported by Chrome and Opera */
+	-webkit-user-drag:none;
+	-khtml-user-drag:none;
+	user-drag: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance:textfield;
+}
+span {
+	cursor: default;
+	font-size: 15px;
+}
+/* 装飾  */
+body {
+	margin: 0px;
+	padding: 0px;
+}
+input[type="number"] {
+	margin-top: 7px;
+	border: none;
+	border-bottom: 1px solid #E6E6E6;
+	background-color: #FFF;
+	width: 120px;
+	text-align: center;
+	transform-origin: 0% 50%;
+	transition: 0.2s;
+}
+input[type="number"]:focus {
+	border-bottom: 1px solid #B3B3B3;
+}
+button {
+	margin: auto 1px;
+	padding: 2px 7px;
+	border: 1px solid #E6E6E6;
+	background-color: #EFEFEF;
+	width: 35px;
+	height: 25px;
+}
+button.btn_on {
+	background-color: #CCCCCC;
+}
+
+/* オリジナー */
+/* ル */
+section#timer {
+	display: none;
+}
